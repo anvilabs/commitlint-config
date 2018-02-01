@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- node
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+notifications:
+  email: false
+  slack:
+    secure: ISR04TXxeqzH3wWdrXRuQQlFD8Df7WZ1kCvaw5pgNciYEqXU3OlSFqNRIgaZBekboccycv8SdatBc7ZY94ntcbDCa1SQ61QY80TZlRzRYIlNa9SY/bOeh25jy72NUrnKAkFb001BcYjUBVFnO/dQ8Z0QEXCF1k7r7ueBxTu+m9vKBpcZVZ2wQbAD02xu2qlfcqPskvxftlOvmKpoQKqfBht5g6Us8uG52prXWR5yeeo83wohXjgGdze+KHvNfPZ8ANWFyI+4CyiBmQeZ7ThrPWZ9NJ/UI1/SO+hCGlkbnDkDdl8lC46T8V6TyG5NB0TaGLk2YpuzmwEfl3K6onSPJ9yREKC4lY2FvxCpPv4kXLdtTpzuPPjjvsMVlBunD2eOY2hgMDnuZJs/+xXx7gFdFXHTy9ieI+1fVO+Lpgagfp5n+TpPIzTKIB+sxVx30PJZvmKrMbOsJhEpHUFOLMsOvLTGMu8X/0GsaS7ebHA6mSqqvCFaUlt3//3nuYzgRRd84MOpqAAfcebs+TYJ32L/kK4rr3GF6wqUZudui+/s8mjAfxMhWx92QXqqzo2abFpc7mF6nXHQmOAnwb/aOe62YTTlyIalM1gdDUHOXnV1igchp3aYtA+s+4ezaYSsIHjbzVZibZwlNHSjKIJRcm+orV7pi9BK61UbegXn8Xr3KtA=
+script:
+- yarn test
+after_success:
+- yarn run semantic-release
