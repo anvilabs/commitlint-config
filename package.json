@@ -37,8 +37,8 @@
     "semantic-release": "semantic-release"
   },
   "lint-staged": {
-    "*.js": ["yarn run lint-fix", "git add"],
-    "{*.json,.vscode/*.json}": ["yarn run format", "git add"]
+    "*.{js,json": ["yarn run format", "git add"],
+    "*.js": ["yarn run lint.fix", "git add"]
   },
   "peerDependencies": {
     "@commitlint/cli": "^6.0.1"
